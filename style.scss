@@ -88,7 +88,7 @@ select {
 }
 /* ########## END GLOBAL ########## */
 
-/* ########## MIXINS ########## */
+/* ########## MIXINS  and variables ########## */
 @mixin flex-row {
 	display: flex;
 	align-items: center;
@@ -99,6 +99,11 @@ select {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+}
+
+:root {
+	// --dice-width: 35%;
+	--dice-width: clamp(35%, 40%, 80%);
 }
 
 /* ########## CONTAINER ########## */
@@ -132,7 +137,7 @@ section {
 	justify-content: space-between;
 	width: 100%;
 	max-width: 768px;
-	overflow: hidden;
+	// overflow: hidden;
 	// border: 1px solid red;
 }
 .dice-sect p {
@@ -146,38 +151,28 @@ section {
 }
 .ldice {
 	width: 90%;
-	margin: 40px auto;
+	margin: 0px auto;
 	box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
 	// position: absolute;
 }
 .rdice {
 	width: 90%;
-	margin: 40px auto;
+	margin: 0px auto;
 	box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
 }
-// .left-dice {
-// 	width: 90%;
-// 	height: 100%;
-// 	margin: 0 auto;
-// 	background: url("img/dice1.png") center/contain no-repeat;
-// }
-// .right-dice {
-// 	width: 90%;
-// 	height: 100%;
-// 	margin: 0 auto;
-// 	background: url("img/dice1.png") center/contain no-repeat;
-// }
 
 button {
-	padding: 1.5rem 6rem;
-	font-size: 2.5rem;
+	// padding: 1.5rem 6rem;
+	text-decoration: underline;
+	font-size: clamp(2.5rem, 3rem, 5rem);
 	font-weight: bold;
-	color: #2c3e50;
+	color: #ecf0f1;
 	cursor: pointer;
-	box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.384);
+	// box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.384);
 	outline: none;
 	border-radius: 3px;
-	background: #ecf0f1;
+	// background: #ecf0f1;
+	background: transparent;
 }
 button:active {
 	transform: scale(0.8);
@@ -209,240 +204,259 @@ button:active {
 // I added far to many
 // could have probably prevented this catastrophe by making the button more fluid and responsive
 // LESSONS LEARNED
-@media only screen and (min-width: 560px) and (orientation: landscape) {
-	// 	.container {
-	// 		width: 95vw;
-	// 		position: relative;
-	// 	}
-	// 	.headline-wrapper {
-	// 		margin-bottom: 4rem;
-	// 		margin-top: 20px;
-	// 	}
-	// 	h3 {
-	// 		font-size: 3rem;
-	// 		margin-top: 10px;
-	// 	}
-	// 	.fas {
-	// 		font-size: 3rem;
-	// 	}
-	// 	.dice-sect p {
-	// 		font-size: 3.5rem;
-	// 	}
-	// 	.ldice {
-	// 		width: 25%;
-	// 		margin: 20px auto;
-	// 		box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
-	// 		// position: absolute;
-	// 	}
-	// 	.rdice {
-	// 		width: 25%;
-	// 		margin: 20px auto;
-	// 		box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
-	// 	}
-	// 	button {
-	// 		// padding: 1rem 4rem;
-	// 		width: 100px;
-	// 		padding: 10px;
-	// 		height: 100px;
-	// 		font-size: 2.5rem;
-	// 		font-weight: bold;
-	// 		color: #2c3e50;
-	// 		cursor: pointer;
-	// 		box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.384);
-	// 		outline: none;
-	// 		border-radius: 50%;
-	// 		background: #ecf0f1;
-	// 		position: absolute;
-	// 		bottom: 100px;
-	// 		left: 224px;
-	// 	}
-	// }
-	// @media only screen and (min-width: 653px) and (orientation: landscape) {
-	// 	button {
-	// 		bottom: 90px;
-	// 		left: 257px;
-	// 	}
-	// 	.headline-wrapper {
-	// 		margin-bottom: 2rem;
-	// 		margin-top: 10px;
-	// 	}
-	// 	.ldice {
-	// 		width: 25%;
-	// 		margin: 0px auto;
-	// 		box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
-	// 		// position: absolute;
-	// 	}
-	// 	.rdice {
-	// 		width: 25%;
-	// 		margin: 0px auto;
-	// 		box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
-	// 	}
-	// 	.dice-sect p {
-	// 		font-size: 3.5rem;
-	// 		margin-bottom: 1rem;
-	// 	}
-	// }
-	// @media only screen and (min-width: 660px) and (orientation: landscape) {
-	// 	button {
-	// 		bottom: 150px;
-	// 		left: 264px;
-	// 	}
-	// }
-	// @media only screen and (min-width: 660px) and (orientation: landscape) {
-	// 	button {
-	// 		bottom: 190px;
-	// 		left: 295px;
-	// 	}
-	// }
-	// @media only screen and (min-width: 720px) and (orientation: landscape) {
-	// 	button {
-	// 		bottom: 320px;
-	// 		left: 295px;
-	// 	}
-	// }
-	// @media only screen and (min-width: 812px) and (orientation: landscape) {
-	// 	button {
-	// 		bottom: 150px;
-	// 		left: 335px;
-	// 	}
-	// }
-	// @media only screen and (min-width: 880px) and (orientation: landscape) {
-	// 	.container {
-	// 		width: 95vw;
-	// 		position: relative;
-	// 	}
-	// 	.headline-wrapper {
-	// 		margin-bottom: 4rem;
-	// 		margin-top: 20px;
-	// 	}
-	// 	h3 {
-	// 		font-size: 3rem;
-	// 		margin-top: 10px;
-	// 	}
-	// 	.fas {
-	// 		font-size: 3rem;
-	// 	}
-	// 	.dice-sect p {
-	// 		font-size: 3.5rem;
-	// 	}
-	// 	.ldice {
-	// 		width: 25%;
-	// 		margin: 20px auto;
-	// 		box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
-	// 		// position: absolute;
-	// 	}
-	// 	.rdice {
-	// 		width: 25%;
-	// 		margin: 20px auto;
-	// 		box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
-	// 	}
-	// 	button {
-	// 		// padding: 1rem 4rem;
-	// 		width: 100px;
-	// 		padding: 10px;
-	// 		height: 100px;
-	// 		font-size: 2.5rem;
-	// 		font-weight: bold;
-	// 		color: #2c3e50;
-	// 		cursor: pointer;
-	// 		box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.384);
-	// 		outline: none;
-	// 		border-radius: 50%;
-	// 		background: #ecf0f1;
-	// 		position: absolute;
-	// 		bottom: 100px;
-	// 		left: 369px;
-	// 	}
-	// }
-	// @media only screen and (min-width: 1024px) and (orientation: landscape) {
-	// 	.container {
-	// 		width: 95vw;
-	// 		position: relative;
-	// 	}
-	// 	.headline-wrapper {
-	// 		margin-bottom: 4rem;
-	// 		margin-top: 20px;
-	// 	}
-	// 	h3 {
-	// 		font-size: 6rem;
-	// 		margin-top: 10px;
-	// 	}
-	// 	.fas {
-	// 		font-size: 5rem;
-	// 	}
-	// 	.dice-sect p {
-	// 		font-size: 4.5rem;
-	// 	}
-	// 	.ldice {
-	// 		width: 65%;
-	// 		margin: 20px auto;
-	// 		box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
-	// 		// position: absolute;
-	// 	}
-	// 	.rdice {
-	// 		width: 65%;
-	// 		margin: 20px auto;
-	// 		box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
-	// 	}
-	// 	button {
-	// 		padding: 0;
-	// 		width: 250px;
-	// 		height: 100px;
-	// 		font-size: 3.6rem;
-	// 		font-weight: bold;
-	// 		color: #2c3e50;
-	// 		cursor: pointer;
-	// 		box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.384);
-	// 		outline: none;
-	// 		border-radius: 3px;
-	// 		background: #ecf0f1;
-	// 		bottom: 130px;
-	// 		left: 355px;
-	// 	}
-	// }
-	// @media only screen and (min-width: 1366px) and (orientation: landscape) {
-	// 	.container {
-	// 		width: 95vw;
-	// 		position: relative;
-	// 	}
-	// 	.headline-wrapper {
-	// 		margin-bottom: 4rem;
-	// 		margin-top: 20px;
-	// 	}
-	// 	h3 {
-	// 		font-size: 8rem;
-	// 		margin-top: 10px;
-	// 	}
-	// 	.fas {
-	// 		font-size: 7rem;
-	// 	}
-	// 	.dice-sect p {
-	// 		font-size: 7.5rem;
-	// 	}
-	// 	.ldice {
-	// 		width: 80%;
-	// 		margin: 20px auto;
-	// 		box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
-	// 		// position: absolute;
-	// 	}
-	// 	.rdice {
-	// 		width: 80%;
-	// 		margin: 20px auto;
-	// 		box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
-	// 	}
-	// 	button {
-	// 		padding: 0;
-	// 		width: 450px;
-	// 		height: 130px;
-	// 		font-size: 5.6rem;
-	// 		font-weight: bold;
-	// 		color: #2c3e50;
-	// 		cursor: pointer;
-	// 		box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.384);
-	// 		outline: none;
-	// 		border-radius: 3px;
-	// 		background: #ecf0f1;
-	// 		bottom: 150px;
-	// 		left: 405px;
-	// 	}
+
+@media only screen and (min-width: 500px) and (max-width: 1020px) and (orientation: landscape) {
+	.headline-wrapper {
+		margin-bottom: 2vh;
+	}
+	.ldice {
+		width: var(--dice-width);
+		margin: 0px auto;
+		box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
+		// position: absolute;
+	}
+	.rdice {
+		width: var(--dice-width);
+		margin: 0px auto;
+		box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
+	}
 }
+
+// @media only screen and (min-width: 560px) and (orientation: landscape) {
+
+// 		.container {
+// 			width: 95vw;
+// 			position: relative;
+// 		}
+// 		.headline-wrapper {
+// 			margin-bottom: 4rem;
+// 			margin-top: 20px;
+// 		}
+// 		h3 {
+// 			font-size: 3rem;
+// 			margin-top: 10px;
+// 		}
+// 		.fas {
+// 			font-size: 3rem;
+// 		}
+// 		.dice-sect p {
+// 			font-size: 3.5rem;
+// 		}
+// 		.ldice {
+// 			width: 25%;
+// 			margin: 20px auto;
+// 			box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
+// 			// position: absolute;
+// 		}
+// 		.rdice {
+// 			width: 25%;
+// 			margin: 20px auto;
+// 			box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
+// 		}
+// 		button {
+// 			// padding: 1rem 4rem;
+// 			width: 100px;
+// 			padding: 10px;
+// 			height: 100px;
+// 			font-size: 2.5rem;
+// 			font-weight: bold;
+// 			color: #2c3e50;
+// 			cursor: pointer;
+// 			box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.384);
+// 			outline: none;
+// 			border-radius: 50%;
+// 			background: #ecf0f1;
+// 			position: absolute;
+// 			bottom: 100px;
+// 			left: 224px;
+// 		}
+// 	}
+// 	@media only screen and (min-width: 653px) and (orientation: landscape) {
+// 		button {
+// 			bottom: 90px;
+// 			left: 257px;
+// 		}
+// 		.headline-wrapper {
+// 			margin-bottom: 2rem;
+// 			margin-top: 10px;
+// 		}
+// 		.ldice {
+// 			width: 25%;
+// 			margin: 0px auto;
+// 			box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
+// 			// position: absolute;
+// 		}
+// 		.rdice {
+// 			width: 25%;
+// 			margin: 0px auto;
+// 			box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
+// 		}
+// 		.dice-sect p {
+// 			font-size: 3.5rem;
+// 			margin-bottom: 1rem;
+// 		}
+// 	}
+// 	@media only screen and (min-width: 660px) and (orientation: landscape) {
+// 		button {
+// 			bottom: 150px;
+// 			left: 264px;
+// 		}
+// 	}
+// 	@media only screen and (min-width: 660px) and (orientation: landscape) {
+// 		button {
+// 			bottom: 190px;
+// 			left: 295px;
+// 		}
+// 	}
+// 	@media only screen and (min-width: 720px) and (orientation: landscape) {
+// 		button {
+// 			bottom: 320px;
+// 			left: 295px;
+// 		}
+// 	}
+// 	@media only screen and (min-width: 812px) and (orientation: landscape) {
+// 		button {
+// 			bottom: 150px;
+// 			left: 335px;
+// 		}
+// 	}
+// 	@media only screen and (min-width: 880px) and (orientation: landscape) {
+// 		.container {
+// 			width: 95vw;
+// 			position: relative;
+// 		}
+// 		.headline-wrapper {
+// 			margin-bottom: 4rem;
+// 			margin-top: 20px;
+// 		}
+// 		h3 {
+// 			font-size: 3rem;
+// 			margin-top: 10px;
+// 		}
+// 		.fas {
+// 			font-size: 3rem;
+// 		}
+// 		.dice-sect p {
+// 			font-size: 3.5rem;
+// 		}
+// 		.ldice {
+// 			width: 25%;
+// 			margin: 20px auto;
+// 			box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
+// 			// position: absolute;
+// 		}
+// 		.rdice {
+// 			width: 25%;
+// 			margin: 20px auto;
+// 			box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
+// 		}
+// 		button {
+// 			// padding: 1rem 4rem;
+// 			width: 100px;
+// 			padding: 10px;
+// 			height: 100px;
+// 			font-size: 2.5rem;
+// 			font-weight: bold;
+// 			color: #2c3e50;
+// 			cursor: pointer;
+// 			box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.384);
+// 			outline: none;
+// 			border-radius: 50%;
+// 			background: #ecf0f1;
+// 			position: absolute;
+// 			bottom: 100px;
+// 			left: 369px;
+// 		}
+// 	}
+// 	@media only screen and (min-width: 1024px) and (orientation: landscape) {
+// 		.container {
+// 			width: 95vw;
+// 			position: relative;
+// 		}
+// 		.headline-wrapper {
+// 			margin-bottom: 4rem;
+// 			margin-top: 20px;
+// 		}
+// 		h3 {
+// 			font-size: 6rem;
+// 			margin-top: 10px;
+// 		}
+// 		.fas {
+// 			font-size: 5rem;
+// 		}
+// 		.dice-sect p {
+// 			font-size: 4.5rem;
+// 		}
+// 		.ldice {
+// 			width: 65%;
+// 			margin: 20px auto;
+// 			box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
+// 			// position: absolute;
+// 		}
+// 		.rdice {
+// 			width: 65%;
+// 			margin: 20px auto;
+// 			box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
+// 		}
+// 		button {
+// 			padding: 0;
+// 			width: 250px;
+// 			height: 100px;
+// 			font-size: 3.6rem;
+// 			font-weight: bold;
+// 			color: #2c3e50;
+// 			cursor: pointer;
+// 			box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.384);
+// 			outline: none;
+// 			border-radius: 3px;
+// 			background: #ecf0f1;
+// 			bottom: 130px;
+// 			left: 355px;
+// 		}
+// 	}
+// 	@media only screen and (min-width: 1366px) and (orientation: landscape) {
+// 		.container {
+// 			width: 95vw;
+// 			position: relative;
+// 		}
+// 		.headline-wrapper {
+// 			margin-bottom: 4rem;
+// 			margin-top: 20px;
+// 		}
+// 		h3 {
+// 			font-size: 8rem;
+// 			margin-top: 10px;
+// 		}
+// 		.fas {
+// 			font-size: 7rem;
+// 		}
+// 		.dice-sect p {
+// 			font-size: 7.5rem;
+// 		}
+// 		.ldice {
+// 			width: 80%;
+// 			margin: 20px auto;
+// 			box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
+// 			// position: absolute;
+// 		}
+// 		.rdice {
+// 			width: 80%;
+// 			margin: 20px auto;
+// 			box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.253);
+// 		}
+// 		button {
+// 			padding: 0;
+// 			width: 450px;
+// 			height: 130px;
+// 			font-size: 5.6rem;
+// 			font-weight: bold;
+// 			color: #2c3e50;
+// 			cursor: pointer;
+// 			box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.384);
+// 			outline: none;
+// 			border-radius: 3px;
+// 			background: #ecf0f1;
+// 			bottom: 150px;
+// 			left: 405px;
+// 		}
+// }
